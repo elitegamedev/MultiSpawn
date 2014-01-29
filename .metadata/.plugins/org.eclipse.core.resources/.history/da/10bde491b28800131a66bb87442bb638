@@ -51,7 +51,7 @@ public class MultiSpawn extends JavaPlugin {
 			}
 			
 		} else if (label.equalsIgnoreCase("spn")) {
-			
+			player.teleport() 
 		}
 		
 		return true;
