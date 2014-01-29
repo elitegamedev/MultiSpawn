@@ -27,12 +27,8 @@ public class MultiSpawn extends JavaPlugin {
 		
 		if (label.equalsIgnoreCase("setspawn")) {
 			if (args.length == 1) {
-				if (!args[1].equalsIgnoreCase("list")) {
-					getConfig().set("MultiSpawn.spawns." + args[0], player.getLocation());
-					player.sendMessage(ChatColor.DARK_PURPLE + "The warp '" + args[0] + "' has been created.");
-				} else {
-					player.sendMessage(ChatColor.DARK_PURPLE + getConfig().getString("MultiSpawn.spawns"));
-				}
+				getConfig().set("MultiSpawn.spawns." + args[0], player.getLocation());
+				player.sendMessage(ChatColor.DARK_PURPLE + "The warp '" + args[0] + "' has been created.");
 			} else {
 				player.sendMessage(ChatColor.RED + "--Usage: /setspawn <name>--");
 			}
