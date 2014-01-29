@@ -37,7 +37,7 @@ public class MultiSpawn extends JavaPlugin {
 					player.sendMessage(ChatColor.DARK_PURPLE + "The warp '" + args[0] + "' has been created.");
 				} else {
 					List<String> spawns = getConfig().getStringList("spawns");
-					player.sendMessage("" + spawns);
+					player.sendMessage(ChatColor.DARK_PURPLE + "" + spawns);
 				}
 			} else {
 				player.sendMessage(ChatColor.RED + "Usage: /setspawn <name>");
