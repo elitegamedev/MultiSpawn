@@ -46,8 +46,6 @@ public class MultiSpawn extends JavaPlugin {
 		
 		if (label.equalsIgnoreCase("setwarp")) {
 			if (args.length == 1) {
-				//TODO Implement Items
-			} else {
 				
 			}
 		}
