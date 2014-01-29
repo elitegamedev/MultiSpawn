@@ -1,6 +1,7 @@
 package com.officiallom.MultiSpawn;
 
 import java.util.List;
+import java.util.Random;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -28,20 +29,28 @@ public class MultiSpawn extends JavaPlugin {
 		Player player = (Player) sender;
 		
 		if (label.equalsIgnoreCase("setspawn")) {
-			if (args.length == 1) {
-				if (!args[0].equalsIgnoreCase("list")) {
-					List<String> spawns = getConfig().getStringList("spawns");
-					spawns.add(args[0] + player.getLocation().getBlock().getLocation());
-					getConfig().set("spawns", spawns);
-					saveConfig();
-					player.sendMessage(ChatColor.DARK_PURPLE + "The warp '" + args[0] + "' has been created.");
+			if (sender instanceof Player) {
+				if (args.length == 1) {
+					if (!args[0].equalsIgnoreCase("list")) {
+						List<String> spawns = getConfig().getStringList("spawns");
+						spawns.add(args[0] + ": " + player.getLocation().getBlock().getLocation());
+						getConfig().set("spawns", spawns);
+						saveConfig();
+						player.sendMessage(ChatColor.DARK_PURPLE + "The warp '" + args[0] + "' has been created.");
+					} else {
+						List<String> spawns = getConfig().getStringList("spawns");
+						player.sendMessage("" + spawns);
+					}
 				} else {
-					List<String> spawns = getConfig().getStringList("spawns");
-					player.sendMessage("" + spawns);
+					player.sendMessage(ChatColor.RED + "Usage: /setspawn <name>");
 				}
 			} else {
-				player.sendMessage(ChatColor.RED + "Usage: /setspawn <name>");
+				sender.sendMessage("You must be a player to use this command!");
 			}
+			
+		} else if (label.equalsIgnoreCase("spn")) {
+			Random rand = new Random(); 
+			int value = rand.nextInt(); 
 		}
 		
 		return true;
