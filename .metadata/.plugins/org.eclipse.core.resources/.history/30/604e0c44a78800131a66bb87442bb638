@@ -51,11 +51,11 @@ public class MultiSpawn extends JavaPlugin {
 		
 		
 		
-		if (label.equalsIgnoreCase("setspawn")) {
+		if (label.equalsIgnoreCase("setwarp")) {
 			if (args.length == 1) {
 				getConfig().set("MultiSpawn.spawns." + args[0], player.getLocation());
 			} else {
-				player.sendMessage(ChatColor.RED + "Usage: /setspawn <name>");
+				player.sendMessage(ChatColor.RED + "Usage: /setwarp <name>");
 			}
 		}
 		
