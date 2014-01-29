@@ -1,0 +1,6 @@
+name: MultiSpawn
+version: 0.1
+main: com.officiallom.MultiSpawn.MultiSpawn
+commands:
+    setspawn:
+        description: Test

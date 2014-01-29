@@ -17,7 +17,11 @@ public class MultiSpawn extends JavaPlugin {
 
 	@Override
 	public void onDisable() {
-		saveDefaultConfig();
+		try {
+			saveConfig();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@Override
