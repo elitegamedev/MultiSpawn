@@ -48,7 +48,7 @@ public class MultiSpawn extends JavaPlugin {
 			if (args.length == 1) {
 				//TODO Implement Items
 			} else {
-				JGJGJGJGJGJGJGJGJGJGJGJGJ
+				
 			}
 		}
 		
