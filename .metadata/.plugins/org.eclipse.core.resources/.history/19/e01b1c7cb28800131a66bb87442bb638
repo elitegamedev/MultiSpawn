@@ -32,13 +32,11 @@ public class MultiSpawn extends JavaPlugin {
 			if (sender instanceof Player) {
 				if (args.length == 1) {
 					if (!args[0].equalsIgnoreCase("list")) {
-						int id = 1;
 						List<String> spawns = getConfig().getStringList("spawns");
-						spawns.add(id + ":" + player.getLocation().getBlock().getLocation());
+						spawns.add(args[0] + ": " + player.getLocation().getBlock().getLocation());
 						getConfig().set("spawns", spawns);
 						saveConfig();
-						player.sendMessage(ChatColor.DARK_PURPLE + "The spawn number '" + id + "' has been created.");
-						id++;
+						player.sendMessage(ChatColor.DARK_PURPLE + "The warp '" + args[0] + "' has been created.");
 					} else {
 						List<String> spawns = getConfig().getStringList("spawns");
 						player.sendMessage("" + spawns);
@@ -51,7 +49,8 @@ public class MultiSpawn extends JavaPlugin {
 			}
 			
 		} else if (label.equalsIgnoreCase("spn")) {
-			player.teleport() 
+			Random rand = new Random(); 
+			int value = rand.nextInt(); 
 		}
 		
 		return true;
