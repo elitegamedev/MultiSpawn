@@ -1,7 +1,5 @@
 package com.officiallom.MultiSpawn;
 
-import java.util.List;
-
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -29,18 +27,14 @@ public class MultiSpawn extends JavaPlugin {
 		
 		if (label.equalsIgnoreCase("setspawn")) {
 			if (args.length == 1) {
-				if (!args[0].equalsIgnoreCase("list")) {
-					List<String> spawns = getConfig().getStringList("spawns");
-					spawns.add(args[0] + player.getLocation().getBlock().getLocation());
-					getConfig().set("spawns", spawns);
-					saveConfig();
+				if (!args[1].equalsIgnoreCase("list")) {
+					getConfig().set("MultiSpawn.spawns." + args[0], player.getLocation());
 					player.sendMessage(ChatColor.DARK_PURPLE + "The warp '" + args[0] + "' has been created.");
 				} else {
-					List<String> spawns = getConfig().getStringList("spawns");
-					player.sendMessage(ChatColor.DARK_PURPLE + "" + spawns);
+					player.sendMessage(ChatColor.DARK_PURPLE + getConfig().getString("MultiSpawn.spawns"));
 				}
 			} else {
-				player.sendMessage(ChatColor.RED + "Usage: /setspawn <name>");
+				player.sendMessage(ChatColor.RED + "--Usage: /setspawn <name>--");
 			}
 		}
 		
