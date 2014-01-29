@@ -49,7 +49,7 @@ public class MultiSpawn extends JavaPlugin {
 			if (args.length == 1) {
 				//TODO Implement Items
 			} else {
-				player.sendMessage(ChatColor.RED + "Usage: /setwarp <name>");
+				player.sendMessage(ChatColor.Red + "Usage: /setwarp <name>");
 			}
 		}
 		

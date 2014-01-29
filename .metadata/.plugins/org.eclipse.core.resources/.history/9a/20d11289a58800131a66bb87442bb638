@@ -3,7 +3,6 @@ package com.officiallom.MultiSpawn;
 import java.io.File;
 import java.io.IOException;
 
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -49,7 +48,7 @@ public class MultiSpawn extends JavaPlugin {
 			if (args.length == 1) {
 				//TODO Implement Items
 			} else {
-				player.sendMessage(ChatColor.RED + "Usage: /setwarp <name>");
+				JGJGJGJGJGJGJGJGJGJGJGJGJ
 			}
 		}
 		
