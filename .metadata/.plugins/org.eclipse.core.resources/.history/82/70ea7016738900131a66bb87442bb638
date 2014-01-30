@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -46,7 +45,7 @@ public class MultiSpawn extends JavaPlugin {
 			}
 			
 		} else if (label.equalsIgnoreCase("spn")) {
-			player.teleport((Location) getConfig().getConfigurationSection("spawns.1"));
+			
 		}
 		
 		return true;
