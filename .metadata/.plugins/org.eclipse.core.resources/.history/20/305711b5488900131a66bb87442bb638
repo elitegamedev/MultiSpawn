@@ -11,8 +11,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class MultiSpawn extends JavaPlugin {
 	
-	int id = 0;
-	
 	@Override
 	public void onEnable() {
 		saveDefaultConfig();
@@ -29,7 +27,7 @@ public class MultiSpawn extends JavaPlugin {
 	public boolean onCommand(CommandSender sender, Command command,
 			String label, String[] args) {
 		Player player = (Player) sender;
-
+		Integer id = 0;
 		if (label.equalsIgnoreCase("setspawn")) {
 			if (sender instanceof Player) {
 						List<String> spawns = getConfig().getStringList("spawns");
@@ -37,8 +35,8 @@ public class MultiSpawn extends JavaPlugin {
 						getConfig().set("spawns", spawns);
 						player.sendMessage(ChatColor.DARK_PURPLE + "The spawn number '" + id + "' has been created.");
 						getConfig().set("currentID", id);
-						++id;
-						getConfig().set("nextID", id);
+						getConfig().set("nextID", "");
+						id++;
 						saveConfig();
 			} else {
 				sender.sendMessage("You must be a player to use this command!");
