@@ -83,7 +83,7 @@ public class MultiSpawn extends JavaPlugin {
 					if (args[0] == id) {
 						List<String> spawn1 = getConfig().getStringList("spawn1");
 						player.sendMessage("Spawn " + args[0] + " Created");
-						w
+						
 						++newId;
 					} /* else if (args[0] == "second") {
 						List<String> spawn2 = getConfig().getStringList("spawn2");
